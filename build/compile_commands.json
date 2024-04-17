@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/karchkov@unn.global/PMI/IoT/build",
+  "command": "/usr/bin/g++-12 -g -o CMakeFiles/main.dir/main.cpp.o -c /home/karchkov@unn.global/PMI/IoT/main.cpp",
+  "file": "/home/karchkov@unn.global/PMI/IoT/main.cpp"
+}
+]
