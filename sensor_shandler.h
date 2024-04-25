@@ -1,15 +1,15 @@
-#include "TempSensors.h"
-#include "PressureSensor.h"
+//#include "tempo_sensors.h"
+#include "pressure_sensors.h"
 #include "humidity.h"
-#include "Co2Sensor.h"
+#include "co2Sensor.h"
 #include "ATH22.h"
 
-class SensorsHandler{
+class SensorsHandler: public tempo_sensors{
 private:
-    TempSensors** Temp_array;
-    HumiditySensor** Hum_array;
-    PressureSensor** Pres_array;
-    Co2Sensors** Co2_array;
+    tempo_sensors** Temp_array;
+    humidity_sensor** Hum_array;
+    pressure_sensors** Pres_array;
+    co2Sensors** Co2_array;
     ATH** ATH_array;
     size_t Temp_size = 10;
     size_t Hum_size = 11;
@@ -18,13 +18,13 @@ private:
     size_t ATH_size = 40;
 public:
     SensorsHandler(){
-    Temp_array = new TempSensors*[Temp_size];
-    Hum_array = new HumiditySensor*[Hum_size];
-    Pres_array = new PressureSensor*[Pres_size];
-    Co2_array = new Co2Sensors*[Co2_size];
+    Temp_array = new tempo_sensors*[Temp_size];
+    Hum_array = new humidity_sensor*[Hum_size];
+    Pres_array = new pressure_sensors*[Pres_size];
+    Co2_array = new co2Sensors*[Co2_size];
     ATH_array = new ATH*[ATH_size];   
     }
-    void add_SensorsTemp(TempSensors* temp){
+    void add_SensorsTemp(tempo_sensors* temp){
         for (int i = 0; i < Temp_size; i++){
             if (Temp_array[i] == nullptr){
                 Temp_array[i] = temp;
@@ -33,7 +33,7 @@ public:
         }
     }
 
-    void add_SensorsHum(HumiditySensor* hum){
+    void add_SensorsHum(humidity_sensor* hum){
         for (int i = 0; i < Hum_size; i++){
             if (Hum_array[i] == nullptr){
                 Hum_array[i] = hum;
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    void add_SensorsPres(PressureSensor* Pres){
+    void add_SensorsPres(pressure_sensors* Pres){
         for (int i = 0; i < Pres_size; i++){
             if (Pres_array[i] == nullptr){
                 Pres_array[i] = Pres;
@@ -60,7 +60,7 @@ public:
         }
     }
 
-    void add_SensorsCo2(Co2Sensors* C02){
+    void add_SensorsCo2(co2Sensors* C02){
         for (int i = 0; i < Co2_size; i++){
             if (Co2_array[i] == nullptr){
                 Co2_array[i] = C02;
@@ -74,7 +74,7 @@ public:
             if (temp.Temp_array[i] == nullptr){
                 break;
             }
-            os << "TempSensors" <<i<<": "<< (*temp.Temp_array[i])() << std::endl;
+            os << "tempo_sensors" <<i<<": "<< (*temp.Temp_array[i])() << std::endl;
         }
         //и так далее 4 раза..
         return os;

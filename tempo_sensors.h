@@ -1,7 +1,7 @@
 #pragma once
 #include <random>
 
-class TempSensors{
+class tempo_sensors{
 private:
     double _temp;
     void New_temp(){
@@ -16,7 +16,7 @@ public:
     const double MIN_TEMP = -50;
     const double MAX_TEMP = 100;
 
-    TempSensors(){
+    tempo_sensors(){
         _temp = MIN_TEMP + rand() % static_cast<int>(MAX_TEMP);
     }
 

@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include <random>
-class Co2Sensors{
+
+class co2Sensors{
 private:
     double _percent;
 
@@ -15,7 +16,7 @@ private:
 public:
     const double MAX_PERCENT = 100;
 
-    Co2Sensors(){
+    co2Sensors(){
         _percent = rand()% static_cast<int>(MAX_PERCENT);
     }
     

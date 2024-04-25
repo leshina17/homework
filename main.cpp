@@ -1,16 +1,16 @@
 #include <iostream>
-#include "TempSensors.h"
+#include "tempo_sensors.h"
 #include "humidity.h"
-#include "Co2Sensor.h"
-#include "PressureSensor.h"
+#include "co2Sensor.h"
+#include "pressure_sensors.h"
 #include "ATH22.h"
-#include "sensorshandler.h"
+#include "sensor_shandler.h"
 
 int main(){
    srand(time(NULL));
-   TempSensors t1;
-   TempSensors t2;
-   TempSensors t3;  
+   tempo_sensors t1;
+   tempo_sensors t2;
+   tempo_sensors t3;  
    SensorsHandler aaa;
    aaa.add_SensorsTemp(&t1);
    aaa.add_SensorsTemp(&t2);

@@ -1,7 +1,7 @@
 #pragma once
 #include <random>
 
-class PressureSensor{
+class pressure_sensors{
     private:
         double _pressure;
         void NewPressure(){
@@ -15,7 +15,7 @@ class PressureSensor{
     public:
         const double MAX_PRESSURE = 900;
         const double MIN_PRESSURE = 600;
-        PressureSensor(){
+        pressure_sensors(){
             _pressure = MIN_PRESSURE+rand()%static_cast<int>(MAX_PRESSURE-MIN_PRESSURE);
         }
         double operator()(){

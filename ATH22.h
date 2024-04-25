@@ -1,12 +1,12 @@
 #pragma once
-#include "TempSensors.h"
+#include "tempo_sensors.h"
 #include "humidity.h"
 #include <tuple>
 
 class ATH{
 private:
-    TempSensors _temp;
-    HumiditySensor _hum;
+    tempo_sensors _temp;
+    humidity_sensor _hum;
 
 public:
 

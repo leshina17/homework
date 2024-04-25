@@ -2,7 +2,7 @@
 #include <iostream>
 #include <random>
 
-class HumiditySensor{
+class humidity_sensor{
 private:
     double _humidity;
 
@@ -18,7 +18,7 @@ private:
     }
 public:
     const double MAX_HUMIDITY = 100;
-    HumiditySensor(){
+    humidity_sensor(){
         _humidity = rand() % static_cast<int>(MAX_HUMIDITY);
     }
 
